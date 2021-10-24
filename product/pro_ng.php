@@ -1,5 +1,5 @@
 <?php
- 
+
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
@@ -17,17 +17,14 @@ if(isset($_SESSION["login"]) === false) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>管理画面TOP</title>
+<title>商品選択NG</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-管理画面TOP<br><br>
-    <a href="../staff/staff_list.php">スタッフ管理</a>
-    <br><br>
-    <a href="../product/pro_list.php">商品管理</a>
-    <br><br>
-    <a href="staff_logout.php">ログアウト</a>
+商品を選択して下さい<br><br>
+<a href="pro_list.php">商品一覧へ</a>
+
 </body>
 </html>

@@ -17,8 +17,8 @@ if(isset($_SESSION["login"]) === false) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スタッフ削除実効</title>
-<link rel="stylesheet" href="../style.css">
+<title>商品詳細</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -26,10 +26,7 @@ if(isset($_SESSION["login"]) === false) {
 <?php
     try{
 
-require_once("../common/common.php");
-
-$post = sanitize($_POST);
-$code = $post["code"];
+$code = $_GET["code"];
 
 $dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
 $user = "root";
@@ -37,12 +34,14 @@ $password = "root";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "DELETE FROM mst_staff WHERE code=?";
+$sql = "SELECT category, code, name, price, gazou, explanation FROM mst_product WHERE code=?";
 $stmt = $dbh -> prepare($sql);
 $data[] = $code;
 $stmt -> execute($data);
 
 $dbh = null;
+
+$rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 
 }
 catch(Exception $e) {
@@ -50,9 +49,31 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
-
-削除完了しました。<br><br>
-<a href="staff_list.php">スタッフ一覧へ</a>
+    
+商品詳細<br><br>
+商品コード<br>
+<?php print $rec["code"];?>
+<br><br>
+カテゴリー<br>
+<?php print $rec["category"];?>
+<br><br>
+商品名<br>
+<?php print $rec["name"];?>
+<br><br>
+画像<br>
+<?php if(empty($rec["gazou"]) === true) {
+    $disp_gazou = "";
+} else {
+    $disp_gazou = "<img src='./gazou/".$rec['gazou']."'>";
+};?>
+<?php print $disp_gazou;?>
+<br><br>
+詳細<br>
+<?php print $rec["explanation"];?>
+<br><br>    
+<form>
+<input type="button" onclick="history.back()" value="戻る">
+</form>
 
 </body>
 </html>

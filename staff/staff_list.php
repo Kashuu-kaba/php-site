@@ -40,7 +40,7 @@ $dbh = null;
 
 print "スタッフ一覧<br><br>";
 print "<form action='staff_branch.php' method='post'>";
-    
+
 while(true) {
     $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
     if($rec === false) {

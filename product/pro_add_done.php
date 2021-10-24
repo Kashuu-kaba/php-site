@@ -17,19 +17,23 @@ if(isset($_SESSION["login"]) === false) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スタッフ削除実効</title>
+<title>商品追加実効</title>
 <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
 <?php
-    try{
+try{
 
 require_once("../common/common.php");
 
 $post = sanitize($_POST);
-$code = $post["code"];
+$name = $post["name"];
+$price = $post["price"];
+$gazou = $post["gazou"];
+$comments = $post["comments"];
+$cate = $post["cate"];
 
 $dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
 $user = "root";
@@ -37,9 +41,13 @@ $password = "root";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "DELETE FROM mst_staff WHERE code=?";
+$sql = "INSERT INTO mst_product(category, name, price, gazou, explanation) VALUES(?,?,?,?,?)";
 $stmt = $dbh -> prepare($sql);
-$data[] = $code;
+$data[] = $cate;
+$data[] = $name;
+$data[] = $price;
+$data[] = $gazou;
+$data[] = $comments;
 $stmt -> execute($data);
 
 $dbh = null;
@@ -48,11 +56,13 @@ $dbh = null;
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    exit();
 }
 ?>
 
-削除完了しました。<br><br>
-<a href="staff_list.php">スタッフ一覧へ</a>
+商品を追加しました。<br><br>
+<a href="product_list.php">スタッフ一覧へ</a>
+<a href="pro_add.php">商品追加画面へ</a>
 
 </body>
 </html>

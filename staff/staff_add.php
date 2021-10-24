@@ -10,7 +10,7 @@ if(isset($_SESSION["login"]) === false) {
    print "<br><br>";
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -19,7 +19,7 @@ if(isset($_SESSION["login"]) === false) {
 <title>スタッフ追加</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-    
+
 <body>
   <form action="staff_add_check.php" method="post">
     スタッフ追加<br><br>
@@ -34,6 +34,6 @@ if(isset($_SESSION["login"]) === false) {
     <br><br>
     <input type="button" onclick="history.back()" value="戻る">
     <input type="submit" value="OK">
-  </form>    
-    
+  </form>
+
 </body>
