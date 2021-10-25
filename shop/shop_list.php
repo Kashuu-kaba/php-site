@@ -10,10 +10,29 @@ session_regenerate_id(true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECサイトTOP</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../shop_list.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 
 <body>
+    <header>
+        <div><h1 class="logo"><a href="./top.html"> 山田養蜂場</a></h1></div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="nav-wrapper">
+        <ul>
+            <li><a href="">このページ</a></li>
+            <li><a href="#">マイカート一覧</a></li>
+            <li><a href="#">カテゴリー別商品一覧</a></li>
+            <li><a href="#">メニュー4</a></li>
+        </ul>
+    </div>
+
 <?php
 try{
     if(isset($_SESSION["member_login"]) === true) {
@@ -54,31 +73,33 @@ while(true) {
         // $img = base64_encode($rec["gazou"]);
         // print "<img src='data:image/png;base64,"$img"'>";
     }
-    print $gazou;
-    print "<br>";
-    print "商品名:".$rec["name"];
-    print "<br>";
-    print "価格:".$rec["price"]."円";
-    print "<br>";
-    print "詳細:".$rec["explanation"];
-    print "</a>";
-    print "<br><br>";
-    // print "<div class='box'>";
-    // print "<div class='list'>";
-    // print "<div class='img'>";
     // print $gazou;
-    // print "</div>";
-    // print "<div class='npe'>";
+    // print "<br>";
     // print "商品名:".$rec["name"];
     // print "<br>";
     // print "価格:".$rec["price"]."円";
     // print "<br>";
     // print "詳細:".$rec["explanation"];
-    // print "</div>";
-    // print "</div>";
-    // print "</div>";
     // print "</a>";
-    // print "<br>";
+    // print "<br><br>";
+    ?>
+
+<main class="main">
+    <div class='box'>
+        <div class='list'>
+            <div class='img'>
+                <?php print $gazou; ?>
+            </div>
+            <div class='npe'>
+                <?php "商品名:".$rec["name"] ?><br>
+                <?php print "価格:".$rec["price"]."円" ?><br>
+                <?php print "詳細:".$rec["explanation"] ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    print "</a>";
+    print "<br>";
 }
 print "<br>";
 
@@ -98,5 +119,7 @@ catch(Exception $e) {
         <li><a href="shop_list_sonota.php">その他</a></li>
     </ul>
 
+</main>
 </body>
+<script src="../javascript.js"></script>
 </html>
