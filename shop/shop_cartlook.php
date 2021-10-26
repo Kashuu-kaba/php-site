@@ -3,9 +3,11 @@
 session_start();
 session_regenerate_id(true);
 
+require_once "../common/layout.php";
+
 if(isset($_SESSION["member_login"]) === false) {
     print "ログインしてください。<br><br>";
-    print "<a href='../member_login/member_login.html'>ログイン画面へ</a>";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
     exit();
 } else {
     print "ようこそ";
@@ -15,20 +17,6 @@ if(isset($_SESSION["member_login"]) === false) {
     print "<br><br>";
 }
 
-?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>カート情報</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-<?php
 
 if(empty($_SESSION["cart"]) === true) {
     print "カートに商品はありません。<br><br>";
@@ -64,7 +52,7 @@ $dbh = null;
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../staff_login/staff_login.php'>ログイン画面へ</a>";
 }
 ?>
 
@@ -74,7 +62,7 @@ catch(Exception $e) {
   <?php if(empty($gazou[$i]) === true) {;?>
   <?php $disp_gazou = "";?>
   <?php } else {;?>
-  <?php $disp_gazou = "<img src='../product/gazou/".$gazou[$i]."'>";?>
+  <?php $disp_gazou = "<img  class='img' src='../product/gazou/".$gazou[$i]."'>";?>
   <?php };?>
   <?php print $disp_gazou;?>
   商品名:<?php print $name[$i];?><br>

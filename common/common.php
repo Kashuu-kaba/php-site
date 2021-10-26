@@ -8,11 +8,9 @@ function sanitize($before) {
 }
 function pulldown_cate() {
     print "<select name='cate'>";
-    print "<option value='食品'>食品</option>";
-    print "<option value='家電'>家電</option>";
-    print "<option value='書籍'>書籍</option>";
-    print "<option value='日用品'>日用品</option>";
-    print "<option value='その他'>その他</option>";
+    print "<option value='健康食品'>健康食品</option>";
+    print "<option value='化粧品'>化粧品</option>";
+    print "<option value='はちみつ食品'>はちみつ食品</option>";
     print "</select>";
 }
 

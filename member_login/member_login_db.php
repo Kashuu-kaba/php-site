@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>会員情報入力画面</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
+<?php
+require_once "../common/layout.php";
+?>
 
 新規会員登録画面<br><br>
 

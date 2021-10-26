@@ -3,6 +3,8 @@
 session_start();
 session_regenerate_id(true);
 
+require_once "../common/layout.php";
+
 if(isset($_SESSION["member_login"]) === false) {
     print "ログインしてく下さい。<br><br>";
     print "<a href='../member_login/member_login.html'>ログイン画面へ<br><br></a>";
@@ -16,20 +18,7 @@ if(isset($_SESSION["member_login"]) === false) {
     print "<br><br>";
     }
 
-?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品購入チェック</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
-
-<?php
-    try {
+try {
 
 $menber_code = $_SESSION["member_code"];
 $cart = $_SESSION["cart"];

@@ -3,6 +3,8 @@
 session_start();
 session_regenerate_id(true);
 
+require_once "../common/layout.php";
+
 if(isset($_SESSION["member_login"]) === true) {
 print "ようこそ";
     print $_SESSION["member_name"];
@@ -11,20 +13,6 @@ print "ようこそ";
     print "<br><br>";
 }
 
-?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品選択画面</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-<?php
 try{
 
 $code = $_GET["code"];
@@ -47,7 +35,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 if(empty($rec["gazou"]) === true) {
     $disp_gazou = "";
 } else {
-    $disp_gazou = "<img src='../product/gazou/".$rec['gazou']."'>";
+    $disp_gazou = "<img class='img' src='../product/gazou/".$rec['gazou']."'>";
 }
 
 }
@@ -72,11 +60,9 @@ catch(Exception $e) {
 </form>
 
 <h3>カテゴリー</h3>
-<a href="shop_list_eart.php">食品</a><br>
-<a href="shop_list_kaden.php">家電</a><br>
-<a href="shop_list_book.php">書籍</a><br>
-<a href="shop_list_niti.php">日用品</a><br>
-<a href="shop_list_sonota.php">その他</a><br>
+<li><a href="shop_list_kenko.php">健康食品</a></li>
+<li><a href="shop_list_cosme.php">化粧品</a></li>
+<li><a href="shop_list_honey.php">はちみつ食品</a></li>
 
 </body>
 </html>

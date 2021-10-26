@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ログイン入力</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-    
-<body>
+<?php
+require_once "../common/layout.php";
+?>
 
 会員情報を入力してください。
 <br><br>
@@ -26,7 +19,7 @@ mailアドレス<br>
 <br><br>
 会員情報が未登録の方はこちらから登録をお願いします。<br>
 <a href="./member_login_db.php">会員登録画面へ</a>
-    
+  
 </form>
 <br><br>
 

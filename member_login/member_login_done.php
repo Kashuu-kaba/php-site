@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ログイン実行</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
 <?php
+require_once "../common/layout.php";
+
     try{
 
 require_once("../common/common.php");
@@ -39,7 +30,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 
 if(empty($rec["name"]) === true) {
     print "ログイン情報が間違っています。<br>";
-    print "<a href='member_login.html'>戻る</a>";
+    print "<a href='member_login.php'>戻る</a>";
     exit();
 }
 session_start();

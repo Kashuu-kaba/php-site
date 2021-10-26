@@ -4,14 +4,16 @@ session_regenerate_id(true);
 
 require_once "../common/layout.php";
 
-try{
-    if(isset($_SESSION["member_login"]) === true) {
-    print "ようこそ";
+if(isset($_SESSION["member_login"]) === true) {
+print "ようこそ";
     print $_SESSION["member_name"];
     print "様　";
     print "<a href='../member_login/member_logout.php'>ログアウト</a>";
     print "<br><br>";
 }
+
+
+try{
 
 $dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
 $user = "root";
@@ -19,9 +21,10 @@ $password = "root";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT code,name,price,gazou,explanation FROM mst_product WHERE1";
+$sql = "SELECT code,name,price,gazou,explanation FROM mst_product WHERE category=?";
 $stmt = $dbh -> prepare($sql);
-$stmt -> execute();
+$data[] = "健康食品";
+$stmt -> execute($data);
 
 $dbh = null;
 
@@ -38,36 +41,16 @@ while(true) {
     print "<a href='shop_product.php?code=".$code."'>";
     if(empty($rec["gazou"]) === true) {
         $gazou = "";
-      } else {
+    } else {
         $gazou = "<img class='img' src='../product/gazou/".$rec['gazou']."'>";
-        // $img = base64_encode($rec["gazou"]);
-        // print "<img src='data:image/png;base64,"$img"'>";
     }
-    // print $gazou;
-    // print "<br>";
-    // print "商品名:".$rec["name"];
-    // print "<br>";
-    // print "価格:".$rec["price"]."円";
-    // print "<br>";
-    // print "詳細:".$rec["explanation"];
-    // print "</a>";
-    // print "<br><br>";
-    ?>
-
-<main class="main">
-    <div class='box'>
-        <div class='list'>
-            <div class='img'>
-                <?php print $gazou; ?>
-            </div>
-            <div class='npe'>
-                <?php "商品名:".$rec["name"] ?><br>
-                <?php print "価格:".$rec["price"]."円" ?><br>
-                <?php print "詳細:".$rec["explanation"] ?>
-            </div>
-        </div>
-    </div>
-    <?php
+    print $gazou;
+    print "<br>";
+    print "商品名:".$rec["name"];
+    print "<br>";
+    print "価格:".$rec["price"]."円";
+    print "<br>";
+    print "詳細:".$rec["explanation"];
     print "</a>";
     print "<br>";
 }
@@ -79,6 +62,8 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
+<a href="shop_list.php">トップページへ戻る</a>
+<br><br><br>
 
 <h3>カテゴリー</h3>
     <ul>
@@ -87,7 +72,5 @@ catch(Exception $e) {
         <li><a href="shop_list_honey.php">はちみつ食品</a></li>
     </ul>
 
-</main>
 </body>
-
 </html>

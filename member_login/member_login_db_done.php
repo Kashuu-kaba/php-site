@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>会員登録完了</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
 <?php
-    try{
+require_once "../common/layout.php";
+try{
 
 require_once("../common/common.php");
 
