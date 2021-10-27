@@ -7,7 +7,7 @@ require_once "../common/layout.php";
 
 if(isset($_SESSION["member_login"]) === false) {
     print "ログインしてく下さい。<br><br>";
-    print "<a href='../member_login/member_login.html'>ログイン画面へ<br><br></a>";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ<br><br></a>";
     print "<a href='shop_list.php'>TOP画面へ</a>";
 }
     if(isset($_SESSION["member_login"]) === true) {
@@ -34,9 +34,9 @@ $cart = $_SESSION["cart"];
 $kazu = $_SESSION["kazu"];
 $max = count($kazu);
 
-$dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
-$user = "root";
-$password = "root";
+$dsn = "mysql:host=mysql78.conoha.ne.jp;dbname=9adb7_cmp_02_db;charset=utf8";
+$user = "9adb7_ybf_cmp_02";
+$password = "gX+ibjR3-bPk";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -100,7 +100,7 @@ print "</form>";
 
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
 }
 ?>
 </div>

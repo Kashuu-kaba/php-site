@@ -4,27 +4,24 @@ session_regenerate_id(true);
 
 require_once "../common/layout.php";
 
-if(isset($_SESSION["member_login"]) === true) {
-print "ようこそ";
+try{
+    if(isset($_SESSION["member_login"]) === true) {
+    print "ようこそ";
     print $_SESSION["member_name"];
     print "様　";
     print "<a href='../member_login/member_logout.php'>ログアウト</a>";
     print "<br><br>";
 }
 
-
-try{
-
-$dsn = "mysql:host=mysql78.conoha.ne.jp;dbname=9adb7_cmp_02_db;charset=utf8";
-$user = "9adb7_ybf_cmp_02";
-$password = "gX+ibjR3-bPk";
+$dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
+$user = "root";
+$password = "root";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT code,name,price,gazou,explanation FROM mst_product WHERE category=?";
+$sql = "SELECT code,name,price,gazou,explanation FROM mst_product WHERE1";
 $stmt = $dbh -> prepare($sql);
-$data[] = "はちみつ食品";
-$stmt -> execute($data);
+$stmt -> execute();
 
 $dbh = null;
 
@@ -44,37 +41,47 @@ while(true) {
     print "<a href='shop_product.php?code=".$code."'>";
     if(empty($rec["gazou"]) === true) {
         $gazou = "";
-    } else {
+      } else {
         $gazou = "<img class='img' src='../product/gazou/".$rec['gazou']."'>";
     }
-    print $gazou;
-    print "<br>";
-    print "商品名:".$rec["name"];
-    print "<br>";
-    print "価格:".$rec["price"]."円";
-    print "<br>";
-    print "詳細:".$rec["explanation"];
-    print "</a>";
-    print "<br>";
+
+?>
+
+        <div class='box'>
+            <div class='list'>
+                <div class='img'>
+                    <?php print $gazou; ?>
+                </div>
+                <div class='npe'>
+                    <?php "商品名:".$rec["name"] ?><br>
+                    <?php print "価格:".$rec["price"]."円" ?><br>
+                    <?php print "詳細:".$rec["explanation"] ?>
+                </div>
+            </div>
+        </div>
+
+<?php
+print "</a>";
+print "<br>";
 }
 print "<br>";
 
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
+    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
-<a href="shop_list.php">トップページへ戻る</a>
-<br><br><br>
 
-    <h3>カテゴリー</h3>
-    <ul>
-        <li><a href="shop_list_kenko.php">健康食品</a></li>
-        <li><a href="shop_list_cosme.php">化粧品</a></li>
-        <li><a href="shop_list_honey.php">はちみつ食品</a></li>
-    </ul>
-</div>
+        <div class="box">
+            <h3>カテゴリー</h3>
+            <ul>
+                <li><a href="shop_list_kenko.php">健康食品</a></li>
+                <li><a href="shop_list_cosme.php">化粧品</a></li>
+                <li><a href="shop_list_honey.php">はちみつ食品</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="right">
         <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
@@ -84,4 +91,5 @@ catch(Exception $e) {
 </main>
 
 </body>
+
 </html>

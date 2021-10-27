@@ -15,9 +15,9 @@ print "ようこそ";
 
 try{
 
-$dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
-$user = "root";
-$password = "root";
+$dsn = "mysql:host=mysql78.conoha.ne.jp;dbname=9adb7_cmp_02_db;charset=utf8";
+$user = "9adb7_ybf_cmp_02";
+$password = "gX+ibjR3-bPk";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -62,7 +62,7 @@ print "<br>";
 }
 catch(Exception $e) {
     print "只今障害が発生しております。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
 }
 ?>
 <a href="shop_list.php">トップページへ戻る</a>

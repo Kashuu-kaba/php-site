@@ -1,6 +1,8 @@
 <?php
 require_once "../common/layout.php";
 ?>
+<main class='main'>
+<div class='left'>
 
 新規会員登録画面<br><br>
 
@@ -29,6 +31,13 @@ tel<br>
 
 </form>
 <br><br>
+</div>
 
+  <div class="right">
+      <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+      <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+      <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+  </div>
+</main>
 </body>
 </html>

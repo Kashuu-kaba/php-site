@@ -2,6 +2,10 @@
 require_once "../common/layout.php";
 require_once("../common/common.php");
 
+
+print "<main class='main'>";
+print "<div class='left'>";
+
 $post = sanitize($_POST);
 
 $name = $post["name"];
@@ -11,6 +15,7 @@ $email = $post["email"];
 $pass = $post["pass"];
 $pass2 = $post["pass2"];
 $okflag = true;
+
 
 if(empty($name) === true) {
     print "お名前を入力してください。<br>";
@@ -64,6 +69,14 @@ if($okflag === false) {
 }
 ?>
 <br><br>
+</div>
+
+<div class="right">
+    <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+    <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+    <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+</div>
+</main>
 
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+
 require_once "../common/layout.php";
 require_once("../common/common.php");
 
@@ -8,6 +9,9 @@ $email = $post["email"];
 $pass = $post["pass"];
 $pass2 = $post["pass2"];
 $okflag = true;
+
+print "<main class='main'>";
+print "<div class='left'>";
 
 if(empty($email) === true) {
     print "emailを入力してください。<br>";
@@ -38,7 +42,14 @@ if($okflag === false) {
     print "<input type='submit' value='ログイン'>";
 }
 ?>
+    </div>
     <br><br>
+    <div class="right">
+        <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+    </div>
+</main>
 
 </body>
 </html>

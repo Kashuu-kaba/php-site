@@ -4,6 +4,9 @@ session_regenerate_id(true);
 
 require_once "../common/layout.php";
 
+print "<main class='main'>";
+print "<div class='left'>";
+
 if(isset($_SESSION["member_login"]) === false) {
     print "ログインしてく下さい。<br><br>";
     print "<a href='../member_login/member_login.html'>ログイン画面へ<br><br></a>";
@@ -39,9 +42,9 @@ print $address."<br>";
 print $tel."<br>";
 
 
-$dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
-$user = "root";
-$password = "root";
+$dsn = "mysql:host=mysql78.conoha.ne.jp;dbname=9adb7_cmp_02_db;charset=utf8";
+$user = "9adb7_ybf_cmp_02";
+$password = "gX+ibjR3-bPk";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -86,6 +89,7 @@ $stmt -> execute();
 
 catch(Exception $e) {
     print "只今障害により大変ご迷惑をおかけしております。";
+    print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
     echo $e->getMessage();
     exit();
 }

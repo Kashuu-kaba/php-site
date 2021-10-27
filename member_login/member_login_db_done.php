@@ -4,6 +4,10 @@ try{
 
 require_once("../common/common.php");
 
+
+print "<main class='main'>";
+print "<div class='left'>";
+
 $post = sanitize($_POST);
 
 $name = $post["name"];
@@ -14,9 +18,9 @@ $pass = $post["pass"];
 
 $pass = md5($pass);
 
-$dsn = "mysql:host=localhost;dbname=shop;charset=utf8";
-$user = "root";
-$password = "root";
+$dsn = "mysql:host=mysql78.conoha.ne.jp;dbname=9adb7_cmp_02_db;charset=utf8";
+$user = "9adb7_ybf_cmp_02";
+$password = "gX+ibjR3-bPk";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -55,6 +59,7 @@ $dbh = null;
 
 print "登録完了しました。<br><br>";
 print "<a href='../shop/shop_list.php'>トップへ戻る</a>";
+
 }
 }
 catch(Exception $e) {
@@ -65,6 +70,14 @@ catch(Exception $e) {
 }
 ?>
 <br><br>
+</div>
+
+    <div class="right">
+        <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+    </div>
+</main>
 
 </body>
 </html>
