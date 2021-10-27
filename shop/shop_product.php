@@ -63,11 +63,6 @@ catch(Exception $e) {
         <form>
         <input type="button" onclick="history.back()" value="戻る">
         </form>
-
-        <h3>カテゴリー</h3>
-        <li><a href="shop_list_kenko.php">健康食品</a></li>
-        <li><a href="shop_list_cosme.php">化粧品</a></li>
-        <li><a href="shop_list_honey.php">はちみつ食品</a></li>
     </div>
 
     <div class="right">

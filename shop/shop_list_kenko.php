@@ -68,12 +68,6 @@ catch(Exception $e) {
 <a href="shop_list.php">トップページへ戻る</a>
 <br><br><br>
 
-    <h3>カテゴリー</h3>
-    <ul>
-        <li><a href="shop_list_kenko.php">健康食品</a></li>
-        <li><a href="shop_list_cosme.php">化粧品</a></li>
-        <li><a href="shop_list_honey.php">はちみつ食品</a></li>
-    </ul>
 </div>
 
 <div class="right">

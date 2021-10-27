@@ -72,17 +72,7 @@ catch(Exception $e) {
     print "<a href='../member_login/member_login.php'>ログイン画面へ</a>";
 }
 ?>
-
-        <div class="box">
-            <h3>カテゴリー</h3>
-            <ul>
-                <li><a href="shop_list_kenko.php">健康食品</a></li>
-                <li><a href="shop_list_cosme.php">化粧品</a></li>
-                <li><a href="shop_list_honey.php">はちみつ食品</a></li>
-            </ul>
-        </div>
     </div>
-
     <div class="right">
         <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
         <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>

@@ -23,8 +23,8 @@
     <div class="nav-wrapper">
         <ul>
             <li><a href="../shop/shop_cartlook.php">マイカート一覧</a></li>
-            <li><a href="../shop/shop_list.php">商品一覧</a></li>
-            <li><a href="#">メニュー4</a></li>
-            <li><a href="">このページ</a></li>
+            <li><a href="shop_list_kenko.php">健康食品</a></li>
+            <li><a href="shop_list_cosme.php">化粧品</a></li>
+            <li><a href="shop_list_honey.php">はちみつ食品</a></li>
         </ul>
     </div>
