@@ -40,7 +40,7 @@ $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 foreach($cart as $key => $val) {
 
-$sql = "SELECT code, name, price, gazou FROM mst_product WHERE code=?";
+$sql = "SELECT code, name, price, gazou FROM product WHERE code=?";
 $stmt = $dbh -> prepare($sql);
 $data[0] = $val;
 $stmt -> execute($data);

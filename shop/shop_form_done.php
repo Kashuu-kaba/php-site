@@ -50,7 +50,7 @@ $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 for($i = 0; $i < $max; $i++) {
 
-$sql = "SELECT name, price FROM mst_product WHERE code=?";
+$sql = "SELECT name, price FROM product WHERE code=?";
 $stmt = $dbh -> prepare($sql);
 $data[0] = $cart[$i];
 $stmt -> execute($data);

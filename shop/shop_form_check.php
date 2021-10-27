@@ -86,7 +86,7 @@ print "合計価格:".$rec['price'] * $kazu[$i]."円<br><br>";
 $goukei[] = $rec['price'] * $kazu[$i];
 print "</div></div></div><br>";
 }
-$dbh = null; 
+$dbh = null;
 print "【ご請求金額】---".array_sum($goukei)."円<br><br>";
 print "<form action='shop_form_done.php' method='post'>";
 print "<input type='hidden' name='name' value='".$name."'>";

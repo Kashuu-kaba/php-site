@@ -19,7 +19,7 @@ $password = "gX+ibjR3-bPk";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT code,name,price,gazou,explanation FROM mst_product WHERE1";
+$sql = "SELECT code,name,price,gazou,explanation FROM product WHERE1";
 $stmt = $dbh -> prepare($sql);
 $stmt -> execute();
 
