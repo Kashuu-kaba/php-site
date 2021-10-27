@@ -12,7 +12,8 @@
 
 <body>
     <header>
-    <div><h1 class="logo"><a href="./top.html"> 山田養蜂場</a></h1></div>
+        <!-- <a href="#"><img style="width:100px; height:100px;" src="./logo.png" alt="ロゴがでる"></a> -->
+        <a href="./top.html"><h1 class="logo">山田養蜂場</h1></a>
         <div class="nav-toggle">
             <span></span>
             <span></span>
@@ -21,9 +22,9 @@
     </header>
     <div class="nav-wrapper">
         <ul>
-            <li><a href="">このページ</a></li>
             <li><a href="../shop/shop_cartlook.php">マイカート一覧</a></li>
-            <li><a href="#">カテゴリー別商品一覧</a></li>
+            <li><a href="../shop/shop_list.php">商品一覧</a></li>
             <li><a href="#">メニュー4</a></li>
+            <li><a href="">このページ</a></li>
         </ul>
     </div>

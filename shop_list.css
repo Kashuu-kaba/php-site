@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 header {
-  background-color: green;
+  background-color: rgb(255, 213, 0);
   width: 100%;
   height: 60px;
   border-bottom: 5px solid black;
@@ -12,11 +12,15 @@ header {
   z-index: 1;
   position: relative;
 }
+header a {
+  text-decoration: none;
+}
 .logo {
   margin: 0 60px;
   height: 100%;
   line-height: 60px;
   font-size: 24px;
+  color: white;
 }
 .nav-toggle {
   width: 60px;
@@ -69,6 +73,7 @@ header {
   transition: 300ms;
 }
 .open {
+  position: absolute;
   right: 0;
 }
 .nav-wrapper ul {
@@ -98,15 +103,28 @@ header {
   height: 100px;
 }
 .main {
-  width: 100%;
+  /* width: 100%; */
+  width: 540px;
+  margin: 0 auto;
   height: calc(100vh - 60px);
   /* position: absolute; */
   top: 60px;
   left: 0;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
   /* position: relative */
-}
-.list{
   display: flex;
+}
+.left {
+  width: 70%;
+}
+.right {
+  width: 30%;
+}
+.ad-img {
+  width: 200px;
+  height: 200px;
+}
+.list {
+  display: flex;
+}
+@media screen and (min-width: 570px) {
 }

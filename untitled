@@ -1,1 +1,3 @@
 echo 'DB接続エラー！: ' . $e->getMessage();
+
+mst_productからproductにDB名変更

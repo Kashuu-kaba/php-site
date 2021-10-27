@@ -55,34 +55,43 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.php'>ログイン画面へ</a>";
 }
 ?>
+<main class="main">
+    <div class="left">
+        <form action="shop_kazu.php" method="post">
+        <h1>カート一覧</h1><br><br>
+        <?php for($i = 0; $i < $max; $i++) {;?>
+        <?php if(empty($gazou[$i]) === true) {;?>
+        <?php $disp_gazou = "";?>
+        <?php } else {;?>
+        <?php $disp_gazou = "<img  class='img' src='../product/gazou/".$gazou[$i]."'>";?>
+        <?php };?>
+        <?php print $disp_gazou;?><br>
+        商品名:<?php print $name[$i];?><br>
+        価格:<?php print $price[$i]."円　";?><br>
+        数量:<input type="text" name="kazu<?php print $i;?>" value="<?php print $kazu[$i];?>"><br>
+        合計価格:<?php print $price[$i] * $kazu[$i]."円";?><br><br>
+        削除:<input type="checkbox" name="delete<?php print $i;?>">
+        <br>
 
-<form action="shop_kazu.php" method="post">
-  カート一覧<br><br>
-  <?php for($i = 0; $i < $max; $i++) {;?>
-  <?php if(empty($gazou[$i]) === true) {;?>
-  <?php $disp_gazou = "";?>
-  <?php } else {;?>
-  <?php $disp_gazou = "<img  class='img' src='../product/gazou/".$gazou[$i]."'>";?>
-  <?php };?>
-  <?php print $disp_gazou;?>
-  商品名:<?php print $name[$i];?><br>
-  価格:<?php print $price[$i]."円　";?><br>
-  数量:<input type="text" name="kazu<?php print $i;?>" value="<?php print $kazu[$i];?>"><br>
-  合計価格:<?php print $price[$i] * $kazu[$i]."円";?><br><br>
-  削除:<input type="checkbox" name="delete<?php print $i;?>">
-  <br>
+        <?php };?>
 
-  <?php };?>
-
-  <br><br>
-  <input type="hidden" name="max" value="<?php print $max;?>">
-  <input type="submit" value="数量変更/削除">
-  <br><br>
-  <input type="button" onclick="history.back()" value="戻る">
-</form>
-<br>
-<a href="shop_form_check.php">ご購入手続きへ進む</a><br>
-<br><br>
-
+        <br><br>
+        <input type="hidden" name="max" value="<?php print $max;?>">
+        <input type="submit" value="数量変更/削除">
+        <br><br>
+        <input type="button" onclick="history.back()" value="戻る">
+        </form>
+        <br>
+        <a href="shop_list.php">商品一覧へ戻る</a><br>
+        <a href="shop_form_check.php">ご購入手続きへ進む</a><br>
+        <br><br>
+    </div>
+    
+    <div class="right">
+        <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+    </div>
+</main>
 </body>
 </html>

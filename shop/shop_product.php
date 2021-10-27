@@ -44,25 +44,37 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
-<a href="shop_cartin.php?code=<?php print $code;?>">カートに入れる</a>
-<br><br>
-<?php print $disp_gazou;?>
-<br>
-商品名:<?php print $rec['name'];?>
-<br>
-価格:<?php print $rec['price'];?>円
-<br>
-詳細:<?php print $rec['explanation'];?>
 
-<br><br>
-<form>
-<input type="button" onclick="history.back()" value="戻る">
-</form>
 
-<h3>カテゴリー</h3>
-<li><a href="shop_list_kenko.php">健康食品</a></li>
-<li><a href="shop_list_cosme.php">化粧品</a></li>
-<li><a href="shop_list_honey.php">はちみつ食品</a></li>
+<main class='main'>
+    <div class='left'>
+        <a href="shop_cartin.php?code=<?php print $code;?>">カートに入れる</a>
+        <br><br>
+        <?php print $disp_gazou;?>
+        <br>
+        商品名:<?php print $rec['name'];?>
+        <br>
+        価格:<?php print $rec['price'];?>円
+        <br>
+        詳細:<?php print $rec['explanation'];?>
+
+        <br><br>
+        <form>
+        <input type="button" onclick="history.back()" value="戻る">
+        </form>
+
+        <h3>カテゴリー</h3>
+        <li><a href="shop_list_kenko.php">健康食品</a></li>
+        <li><a href="shop_list_cosme.php">化粧品</a></li>
+        <li><a href="shop_list_honey.php">はちみつ食品</a></li>
+    </div>
+
+    <div class="right">
+        <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+    </div>
+</main>
 
 </body>
 </html>

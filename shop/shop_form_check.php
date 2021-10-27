@@ -18,6 +18,15 @@ if(isset($_SESSION["member_login"]) === false) {
     print "<br><br>";
     }
 
+
+    print "購入確認画面";
+    print "　<a href='shop_cartlook.php'>カートを見る</a>";
+    print "<br><br>";
+
+
+print "<main class='main'>";
+print "<div class='left'>";
+
 try {
 
 $menber_code = $_SESSION["member_code"];
@@ -62,7 +71,7 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 if(empty($rec["gazou"]) === true) {
 $disp_gazou = "";
 } else {
-$disp_gazou = "<img src='../product/gazou/".$rec['gazou']."'>";
+$disp_gazou = "<img class='img' src='../product/gazou/".$rec['gazou']."'>";
 }
 print "<div class='box'>";
 print "<div class='list'>";
@@ -94,6 +103,12 @@ catch(Exception $e) {
     print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
-
+</div>
+   <div class="right">
+        <div><img class="ad-img" src="../product/gazou/adv-1.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-2.png" alt="#"></div>
+        <div><img class="ad-img" src="../product/gazou/adv-3.jpg" alt="#"></div>
+    </div>
+</main>
 </body>
 </html>
