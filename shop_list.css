@@ -12,7 +12,8 @@ header {
   z-index: 1;
   position: relative;
 }
-header a {
+header a,
+.top-main a {
   text-decoration: none;
 }
 .logo {
@@ -71,6 +72,7 @@ header a {
   width: 200px;
   background-color: black;
   transition: 300ms;
+  z-index: 10;
 }
 .open {
   position: absolute;
@@ -114,7 +116,7 @@ header a {
   display: flex;
 }
 .left {
-  width: 70%;
+  width: 60%;
 }
 .right {
   width: 30%;
@@ -126,5 +128,94 @@ header a {
 .list {
   display: flex;
 }
-@media screen and (min-width: 570px) {
+/* top.php */
+.box{
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: bottom;
+}
+.upper-left{
+  background-image: url(../product/gazou/top-3.jpg);
+}
+.upper-right{
+  background-image: url(../product/gazou/top-2.jpg);
+}
+.bottom-left{
+  background-image: url(../product/gazou/top-1.jpg);
+}
+.bottom-right{
+  background-image: url(../product/gazou/top-4.jpg);
+}
+
+.upper-right{
+  background-color: yellow;
+}
+.bottom-left{
+  background-color: violet;
+}
+.bottom-right{
+  background-color: blueviolet;
+}
+.top-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.top-main{
+  width: 100%;
+  height: calc(100vh - 60px);
+  /* position: absolute; */
+  /* top: 60px; */
+  /* left: 0; */
+  display: flex;
+  flex-wrap: wrap;
+  /* position: relative; */
+  z-index: 1;
+}
+/* slidIn */
+/* animate: [ 1. 名前 ] [ 2. 時間 ] [ 3. イージング ] [ 4. 待ち ] [ 5. 繰り返し ] [ 6. 逆再生 ] [ 7. 終了後 ]; */
+.upper-right{
+  opacity: 0;
+  animation: slideIn 4s cubic-bezier(0.25, 1, 0.5, 1) 1s 1 forwards;
+}
+.bottom-right{
+  opacity: 0;
+  animation: slideIn 4s cubic-bezier(0.25, 1, 0.5, 1) 5s 1 forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(180px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  /* 40%,
+  100% {
+  } */
+}
+
+@keyframes slideCut {
+  0% {
+    transform: translateX(-180px);
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.upper-left{
+  opacity: 0;
+  animation: slideCut 4s cubic-bezier(0.25, 1, 0.5, 1) 3s 1 forwards;
+}
+.bottom-left{
+  opacity: 0;
+  animation: slideCut 4s cubic-bezier(0.5, 1, 0.25, 1) 7s 1 forwards;
 }

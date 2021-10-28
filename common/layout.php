@@ -13,7 +13,7 @@
 <body>
     <header>
         <!-- <a href="#"><img style="width:100px; height:100px;" src="./logo.png" alt="ロゴがでる"></a> -->
-        <a href="./top.html"><h1 class="logo">山田養蜂場</h1></a>
+        <a href="../common/top.php"><h1 class="logo">山田養蜂場</h1></a>
         <div class="nav-toggle">
             <span></span>
             <span></span>
@@ -23,8 +23,9 @@
     <div class="nav-wrapper">
         <ul>
             <li><a href="../shop/shop_cartlook.php">マイカート一覧</a></li>
-            <li><a href="shop_list_kenko.php">健康食品</a></li>
-            <li><a href="shop_list_cosme.php">化粧品</a></li>
-            <li><a href="shop_list_honey.php">はちみつ食品</a></li>
+            <li><a href="https://ybf-cmp202109.conohawing.com/ybf-cmp-02-dfvn/html/htdocs/shop/shop_list.php">商品一覧</a></li>
+            <li><a href="https://ybf-cmp202109.conohawing.com/ybf-cmp-02-dfvn/html/htdocs/shop/shop_list_kenko.php">健康食品</a></li>
+            <li><a href="https://ybf-cmp202109.conohawing.com/ybf-cmp-02-dfvn/html/htdocs/shop/shop_list_cosme.php">化粧品</a></li>
+            <li><a href="https://ybf-cmp202109.conohawing.com/ybf-cmp-02-dfvn/html/htdocs/shop/shop_list_honey.php">はちみつ食品</a></li>
         </ul>
     </div>
